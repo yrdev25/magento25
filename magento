@@ -1,3 +1,4 @@
+	/etc/php // check php versions.
 	Magento install :
 
 	php bin/magento setup:install --base-url=http://magento236.loc/ \
