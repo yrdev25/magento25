@@ -33,6 +33,243 @@
 	Rare case permission :
 
 	sudo chmod -R 777 magento243p2/
+	
+	
+	
+	*****************************************************************************************************************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************************
+*************** snap store install *************
+
+1. sudo rm /etc/apt/preferences.d/nosnap.pref
+2. sudo apt update
+3. sudo apt update
+4. sudo apt install snapd
+
+*************** my sql import data cmd ***************
+
+open cmd where your file present
+
+mysql -u root -p sygathomas_db(used databasename) < sygathomas_db.sql(database file)
+
+mysqldump -u neondirect_db_usr -p neondirect_db_new > neondirect_db_new_03_12_2021.sql
+
+*************** magento catch clear ***************
+
+php bin/magento cache:clean
+php bin/magento cache:flush
+
+php bin/magento setup:upgrade
+
+php bin/magento setup:di:compile
+
+php bin/magento setup:static-content:Deploy -f
+
+chmod -R 777 var/ generated/
+
+chmod -R 777 var
+ chmod -R 777 pub/static
+ chmod -R 777 generated
+
+*************** version check ***************
+1) elasticsearch
+
+cd /usr/share/elasticsearch
+
+sudo ./bin/elasticsearch --version
+
+2) php -v
+
+3) mysql --version
+
+*************** skype installation ***************
+sudo apt install -y wget
+wget https://repo.skype.com/latest/skypeforlinux-64.deb
+sudo apt install ./skypeforlinux-64.deb
+
+*************** Sublime Installation ***************
+
+1) wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+2)sudo apt-get install apt-transport-https
+3) echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/  sources.list.d/sublime-text.list
+4) sudo apt-get update
+5) sudo apt-get install sublime-text
+
+*************** chrome Installation ***************
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo gdebi google-chrome-stable_current_amd64.deb
+
+
+*************** peek screen recorder Installation ***************
+
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek
+    
+*************** PHP Installation ***************
+
+1. Ensure you are using the latest Ubuntu updates by entering the following command into a terminal window:
+    -- sudo apt update && sudo apt upgrade
+
+2. Install software-properties-common to help you manage distributions and independent software sources:
+    -- sudo apt install software-properties-common
+
+3. Next, add the ondrej/php PPA which provides all the latest releases of PHP for Ubuntu 18.04:
+    -- sudo add-apt-repository ppa:ondrej/php
+
+4. Update the repository to include the new packages:
+    -- sudo apt update
+
+5. Now you can install PHP.
+
+    To install PHP 7.4, run the command:
+    -- sudo apt -y install php5.6
+
+    To install PHP 8.0, run:
+    -- sudo apt -y install php8.0
+
+6. Verify the installation with:
+    -- php -v
+
+Installing PHP Modules on Ubuntu
+-- sudo apt install php5.6-{mysql,zip,json,common,bcmath}
+   sudo apt install php8.1-{mysql,zip,common,bcmath} 
+
+
+To list all loaded PHP modules run the command:
+-- php -m
+
+To list all PHP Versions run the command:
+-- sudo update-alternatives --list php
+
+Type the below-given command if you want to get PHP 7 as Apache Module:
+    -- sudo apt install php7.4 libapache2-mod-php7.4
+    -- sudo apt install php8.1 libapache2-mod-php8.1
+
+
+If you have installed PHP as an apache module, restart the apache server when the PHP is installed:
+    -- sudo systemctl restart apache2
+
+*************** MySql Installation ***************
+
+Let’s install the PHP MySQL extension with the command:
+-- sudo apt update
+-- sudo apt install mysql-server
+
+Install phpMyAdmin on Linux Mint 19:
+-- sudo apt update
+-- sudo apt install phpmyadmin php-mbstring php-gettext
+-- sudo apt-get install php7.4-mbstring
+-- sudo apt-get install php7.4-mcrypt
+-- sudo phpenmod mbstring
+-- sudo systemctl restart apache2
+-- sudo systemctl status mysql
+
+sudo mysql -u root -p
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'aousr'@'localhost' IDENTIFIED WITH mysql_native_password
+BY 'ashfordOrbital@12345';
+
+sudo service mysql restart
+
+*************** PHP Version Disable enable ***************
+sudo a2dismod php8.0
+sudo a2enmod php7.4
+sudo systemctl restart apache2
+
+sudo a2dismod php8.1 &&  sudo update-alternatives --set php /usr/bin/php7.4 && sudo a2enmod php7.4 && sudo service apache2 restart
+sudo a2dismod php8.2 &&  sudo update-alternatives --set php /usr/bin/php7.4 && sudo a2enmod php7.4 && sudo service apache2 restart
+
+*************** PHP modules installation ***************
+
+sudo apt-get install -y php7.4 libapache2-mod-php7.4 php7.4-curl php7.4-gmp php7.4-mbstring php7.4-phpdbg php7.4-sqlite3 php7.4-zip php7.4-bcmath php7.4-dba php7.4-imap php7.4-pspell php7.4-sybase php7.4-bz2 php7.4-dev php7.4-interbase php7.4-mysql php7.4-readline php7.4-tidy php7.4-cgi php7.4-enchant php7.4-intl php7.4-odbc php7.4-xml php7.4-cli php7.4-fpm php7.4-json php7.4-opcache php7.4-snmp php7.4-xmlrpc php7.4-common php7.4-gd php7.4-ldap php7.4-pgsql php7.4-soap php7.4-xsl php7.4-mongodb
+
+sudo apt-get install -y php8.1 libapache2-mod-php8.1 php8.1-curl php8.1-gmp php8.1-mbstring php8.1-phpdbg php8.1-sqlite3 php8.1-zip php8.1-bcmath php8.1-dba php8.1-imap php8.1-pspell php8.1-sybase php8.1-bz2 php8.1-dev php8.1-interbase php8.1-mysql php8.1-readline php8.1-tidy php8.1-cgi php8.1-enchant php8.1-intl php8.1-odbc php8.1-xml php8.1-cli php8.1-fpm php8.1-opcache php8.1-snmp php8.1-xmlrpc php8.1-common php8.1-gd php8.1-ldap php8.1-pgsql php8.1-soap php8.1-xsl php8.1-mongodb
+
+*************** Composer installation ***************
+-- curl -sS https://getcomposer.org/installer -o composer-setup.php
+-- sudo php composer-setup.php --install-dir=/usr/bin --filename=composer
+
+
+
+
+curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
+sudo apt update
+
+
+sudo apt install elasticsearch
+
+sudo nano /etc/elasticsearch/elasticsearch.yml
+
+
+
+
+rm -rf var/cache/* di/* generation/* page_cache/*
+
+sudo a2ensite local.magento242.com.conf
+
+systemctl reload apache2
+
+/admin_uat14w
+
+admin_vi6995
+
+admin_12c348
+---------------------------------------------------------
+
+****************virtual host****************
+
+ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/magento243.loc.conf
+ sudo nano /etc/apache2/sites-available/magento243.loc.conf (After second command check below)
+
+
+ServerAdmin webmaster@localhost
+ServerName commscloud.loc
+ServerAlias commscloud.loc
+DocumentRoot /var/www/html/commscloud
+
+crt+x
+y
+Enter
+
+->sudo a2ensite magento243.loc.conf
+
+sudo service apache2 restart
+
+Add ip in hosts file(In etc Folder) and restart apache
+
+magento243.loc/admin_vi6995
+
+bin/magento setup:install --base-url="http://magento243.loc/" --db-host=localhost --db-name=magento243 --db-user=root --db-password='root' --admin-firstname=admin --admin-lastname=admin --admin-email=example@email.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=EUR --timezone=UTC --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=127.0.0.1 --elasticsearch-port=9200
+
+**********add user ************
+
+(2)sudo adduser rahula www-data
+(3)sudo chown rahula:www-data -R /var/www/
+
+(4)sudo nano /etc/apache2/sites-available/000-default.conf
+<Directory “/var/www/html”>
+AllowOverride All
+</Directory>
+
+(5)sudo nano /etc/apache2/apache2.conf
+AllowOverride All
+
+(6)sudo nano /etc/apache2/sites-available/000-default.conf
+<Directory “/var/www/html”>
+AllowOverride All
+</Directory>
+
+(7)sudo a2enmod rewrite
+(8)sudo service apache2 restart
+
 
 	Old versions of magento :
 
