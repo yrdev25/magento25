@@ -292,3 +292,6 @@ AllowOverride All
 
 	To reflect changes Apache restart is required:
 		sudo systemctl restart apache2
+		*************************************Command For PHP Version Change***********************************
+		sudo a2dismod php7.2 &&  sudo a2enmod php7.4 && sudo update-alternatives --set php /usr/bin/php7.4 && sudo update-alternatives --set phar /usr/bin/phar7.4 && sudo systemctl restart apache2
+		*************************************______________________________**************************************
